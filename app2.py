@@ -47,10 +47,8 @@ def process_video(video_path, detector):
         if not ret:
             break
         output = detector.detect(frame)
-        stframe.image(output, channels=\"BGR\", use_container_width=True)
-        time.sleep(0.03)  # ~30 FPS
+        stframe.image(output, channels="BGR", use_column_width=True)
     cap.release()
-
 
 if option == "Upload Video":
     uploaded_file = st.file_uploader("Upload a road video", type=["mp4", "mov", "avi"])
